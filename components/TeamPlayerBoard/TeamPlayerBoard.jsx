@@ -35,6 +35,7 @@ export default function TeamProfileBoard(){
           const playerProfile = <span style={{textOverflow:"elliopsis",whiteSpace:"nowrap",overflow:"hidden"}}>{avatar}{player.PLAYER_NAME}</span>;
 
           return {
+               key : player.PLAYER_ID,
                PLAYER_ID :  player.PLAYER_ID ,
                PLAYER_NAME : player.PLAYER_NAME ,
                playerProfile : playerProfile,
@@ -93,6 +94,12 @@ export default function TeamProfileBoard(){
                title: 'REB',
                dataIndex: 'REB',
                sorter: (a, b) => a.REB - b.REB,
+          },
+          {
+               width: 100,
+               title: 'PM + / -',
+               dataIndex: 'PLUS_MINUS',
+               sorter: (a, b) => a.PLUS_MINUS - b.PLUS_MINUS,
           },
           {
                width: 100,

@@ -13,7 +13,6 @@ export const LeagueStandingsProvider = props => {
           nba.leagueStandings({...options}).then(function(response){
                const data = Object.entries(response.Standings).map( item => item[1] )
                setLeagueStandings(data);
-               console.log("fetched data")
            })
      },[]);
      

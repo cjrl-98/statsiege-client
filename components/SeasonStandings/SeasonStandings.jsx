@@ -33,7 +33,7 @@ export default function SeasonStandings(){
                          <p style={{margin: ' 0 8px auto 8px', fontSize:'20px'}}>{index + 1}</p>
                          <List.Item.Meta
                               avatar={<Avatar src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${team.id}.svg`} />}
-                              title={<Link href={`/dashboard/${team.id}`}><a>{team.teamName}</a></Link>}
+                              title={<Link href={`/dashboard/${team.id}`} prefetch={false}><a>{team.teamName}</a></Link>}
                               description={`Wins : ${team.wins} | Losses: ${team.losses} | Current Streak : ${team.currentStreak}`}
                          />
                          </List.Item>
