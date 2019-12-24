@@ -1,80 +1,91 @@
 import SeasonStandings from '../SeasonStandings/SeasonStandings';
 import TeamProfileBoard from '../TeamProfileBoard/TeamProfileBoard';
+import TeamPlayerBoard from '../TeamPlayerBoard/TeamPlayerBoard';
 
 export default function TeamLayout(props){
      return(
           <>
-               <section className="layout">
-                    <div className="layout__container">
-                         <article className="layout__article layout__article--left">
-                                   <TeamProfileBoard />
-                         </article>
-                         <article className="layout__article layout__article--right">
-                              <h1 className="layout__article--standings-title">2019-20 Season Standings</h1>
-                              <div className="layout__article__content">
-                                   <SeasonStandings/>
-                              </div>
-                         </article>
+          <section className="stats-section">
+               <div className="grid-container">
+                    <div className="top-container">
+                         <div className="team-profile-container bordered-container">
+                              <TeamProfileBoard />
+                         </div>
+                         <div className="season-standings-container  bordered-container">
+                              <SeasonStandings/>
+                         </div>
                     </div>
-               </section>
-               <style jsx>{`
-                    .layout {
-                         width: 100%;
-                         display: flex;
-                         flex-direction: coloumn;
-                         justify-content: center;
-                    }
-                    .layout__container {
-                         width: 100%;
-                         display:flex;
-                         flex-direction : column;
-                         margin: 16px;
-                         justify-content: center;
-                    }
+                    <div className="team-player-profile-container bordered-container">
+                         <TeamPlayerBoard/>
+                    </div>
+               </div>
+          </section>
+               
+          <style jsx>{`
+               .stats-section{
+                    width: 100%;
+                    margin: 0 auto;
+               }
+               
+               .bordered-container{
+                    min-height: 680px;
+                    position: relative;
+                    border: 1px solid #1d1d1d; 
+               }
 
-                    .layout__article{
-                         position: relative;
-                         width: 100%;
+               .season-standings-container{
+                    margin: 16px;
+               }
+
+               .team-player-profile-container{
+                    width: 100%;
+               }
+
+               @media (min-width: 768px) {
+                    .stats-section{
+                         padding: 24px;
+                    }
+                    .grid-container {
+                         display: grid;
+                         grid-template-columns: 1fr;
+                         grid-template-rows: 1fr 1fr;
+                         grid-template-areas: "top-container" "team-player-profile-container";
                     }
                     
-                    .layout__article--left{
-                         min-height: 400px;
-                         border: 1px solid #1d1d1d;
+                    .top-container {
+                         display: grid;
+                         grid-template-columns: 70% 30%;
+                         grid-template-rows: 1fr;
+                         grid-template-areas: "team-profile-container season-standings-container";
+                         grid-area: top-container;
+                         margin-bottom: 16px;
                     }
-
-                    .layout__article__content{
-                         overflow: auto;
-                         max-height: 400px;
-                         border: 1px solid #1d1d1d;
-                    }
-
-                    .layout__article--standings-title{
-                         font-size : 24px;
-                         font-weight: 900;
-                         background-color: ${'#542583'};
-                         color: #ffffff;
-                         padding: 8px 16px;
+     
+                    .season-standings-container {
+                         grid-area: season-standings-container;
                          margin: 0;
                     }
-
-                    @media (min-width: 768px) {
-                         .layout__container {
-                              flex-direction: row;
-                              margin: 24px;
-                         }
-                         .layout__article--left{
-                              width: 60%;
-                         }
-                         .layout__article--right{
-                              width: 40%;
-                              overflow: auto;
-                              margin-left: 16px;
-                         }
+                    
+                    .team-profile-container {
+                         grid-area: team-profile-container;
+                         margin-right: 16px;
                     }
-                    @media (min-width: 1024px) {
-                         
+                    
+                    .team-player-profile-container {
+                         grid-area: team-player-profile-container;
                     }
-               `}</style>
-        </>
+     
+                    .layout__article__content{
+                         height:800px;
+                         overflow: auto;
+                    }
+               }
+               @media (min-width: 1440px) {
+                    .stats-section{
+                         max-width: 1440px;
+                    }
+               }
+          `}</style>
+          </>
      );
 }

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import nba from 'nba-api-client';
 import {LeagueStandingsContext} from '../../context/LeagueStandings.js';
 import ProfileTab from './ProfileTab';
-import { Tabs, Avatar,Icon, Spin } from 'antd';
+import { Tabs, Avatar,Icon, Spin, Alert } from 'antd';
 const { TabPane } = Tabs;
 
 export default function TeamProfileBoard(){
@@ -17,11 +17,11 @@ export default function TeamProfileBoard(){
                nba.teamDetails({TeamID: parseInt(router.query.id)}).then(function(data){
                     setTeamDetails(data);
                })
-               .catch( error => console.log(error))
+               .catch( error => console.error(error))
                nba.leagueTeamGeneralStats({TeamID: parseInt(router.query.id), Season: "2019-20"}).then(function(data){
                     setTeamStats(data.LeagueDashTeamStats)
                })
-               .catch( error => console.log(error))
+               .catch( error => console.error(error))
           }
      },[router.query.id]);    
 
@@ -50,13 +50,10 @@ export default function TeamProfileBoard(){
                               <ProfileTab teamDetails={teamDetails} teamStats={teamStats} team={team}/>
                          </TabPane>
                          <TabPane tab="Advance Stats" key="2">
-                              Advance Stats
                          </TabPane>
                          <TabPane tab="History" key="3">
-                              History
                          </TabPane>
                          <TabPane tab="Hall of Fame" key="4">
-                              Hall of Fame
                          </TabPane>
                     </Tabs>
                </div>
@@ -85,6 +82,6 @@ export default function TeamProfileBoard(){
                          }
                     }
                `}</style>
-          </> : <Spin spinning={true} style={{position: "absolute", top:"0",left: "0", width: "100%", height:"100%", display: "flex", justifyContent: "center", alignItems: "center", zIndex:"999" }}/>
+          </> : <Spin spinning={true} style={{border:"1px solid #1d1d1d", position: "absolute", top:"0",left: "0", width: "100%", height:"100%", display: "flex", justifyContent: "center", alignItems: "center" }}/>
      );
 }
