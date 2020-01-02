@@ -35,4 +35,12 @@
                     Field Goal Percentage, Blocks per game, Turnovers per game, etc ...
                2) Sort the players by field
 
+## Continuing after the Holidays
 
+# January 2 2019
+## Day 2
+
+     Day Goals 
+          1) Going to start working on NBA All-Decade 1st Team Page
+          2) Finishing Burger Menu
+          3) Launch server on Digital Ocean Droplet

@@ -1,4 +1,5 @@
 import {LeagueStandingsProvider} from '../context/LeagueStandings';
+import {ThemeProvider} from '../context/ThemeContext';
 import App from 'next/app'
 
 class MyApp extends App {
@@ -16,7 +17,7 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props
-    return <LeagueStandingsProvider><Component {...pageProps} /></LeagueStandingsProvider>
+    return <LeagueStandingsProvider><ThemeProvider><Component {...pageProps} /></ThemeProvider></LeagueStandingsProvider>
   }
 }
 

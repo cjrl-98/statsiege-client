@@ -1,18 +1,31 @@
+import {useContext} from 'react';
 import Head from 'next/head';
 import TeamLayout from '../../components/TeamLayout/TeamLayout';
+import {ThemeContext} from '../../context/ThemeContext';
+import Example from '../../components/Header/Example';
 
 export default function Dashboard (){
+  const theme = useContext(ThemeContext);
   return(
     <div>
       <Head>
-          <title>Statness</title>
+          <title>Statsiege - Basketball Stats</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900&display=swap" rel="stylesheet"></link>
+          <meta name="robots" content="index, follow"/>
+          <meta charset="utf-8"/>
+          <meta name="description" content="NBA Statistics and Team Profile for Teams"/>
+          <meta name="theme-color" content={theme}/>
+          <meta http-equiv="cache-control" content="cache"/>
       </Head>
       <TeamLayout/>
+      <noscript>Your browser does not support JavaScript!</noscript>
       <style jsx global>{`
-        body { 
-          font-family:  'Montserrat', sans-serif;
+        .main-color{
+          background-color: ${theme};
+          color: #FFFFFF;
+        }
+        .bordered{
+          border: 1px solid #e8e8e8;
         }
       `}</style>
     </div>

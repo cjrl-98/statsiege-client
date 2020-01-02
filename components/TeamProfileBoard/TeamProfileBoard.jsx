@@ -1,9 +1,14 @@
 import {useState, useEffect, useContext} from 'react';
 import { useRouter } from 'next/router';
-import nba from 'nba-api-client';
 import {LeagueStandingsContext} from '../../context/LeagueStandings.js';
+import { Tabs, Avatar,Icon, Spin } from 'antd';
 import ProfileTab from './ProfileTab';
-import { Tabs, Avatar,Icon, Spin, Alert } from 'antd';
+import TeamPlayerStatTab from '../TeamPlayerStatTab/TeamPlayerStatTab';
+import HallOfFame from './HallOfFame'
+import HistoryTab from './HistoryTab';
+import TeamAdvanceStatTab from '../TeamAdvanceStatTab/TeamAdvanceStatTab';
+import StatGlossary from '../StatGlossary/StatGlossary';
+import {getTeamDetails} from '../../modules/getStats';
 const { TabPane } = Tabs;
 
 export default function TeamProfileBoard(){
@@ -14,27 +19,19 @@ export default function TeamProfileBoard(){
 
      useEffect( ()=>{
           if(router.query.id){
-               nba.teamDetails({TeamID: parseInt(router.query.id)}).then(function(data){
-                    setTeamDetails(data);
-               })
-               .catch( error => console.error(error))
-               nba.leagueTeamGeneralStats({TeamID: parseInt(router.query.id), Season: "2019-20"}).then(function(data){
-                    setTeamStats(data.LeagueDashTeamStats)
-               })
-               .catch( error => console.error(error))
+               getTeamDetails(router.query.id, setTeamDetails, setTeamStats);
           }
-     },[router.query.id]);    
+     },[router.query.id]);
 
      //find the specific team from context based on router params and pass it down 
-     const team = leagueStandings ? leagueStandings.find(obj => {
-          return obj.TeamID === parseInt(router.query.id)
+     const team = leagueStandings ? leagueStandings.find( team => {
+          return team.TeamID === parseInt(router.query.id)
      }) : null
-
      return(
           leagueStandings && teamDetails ?
           <>
                <div>
-                    <div className="profile__team-banner">
+                    <div className="profile__team-banner main-color">
                          <div>
                               <Avatar size="large" src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${team.TeamID}.svg`} />
                               <span className="banner__name">{`${team.TeamCity} ${team.TeamName}`}</span>
@@ -49,11 +46,26 @@ export default function TeamProfileBoard(){
                          <TabPane tab="Profile" key="1">
                               <ProfileTab teamDetails={teamDetails} teamStats={teamStats} team={team}/>
                          </TabPane>
-                         <TabPane tab="Advance Stats" key="2">
+                         <TabPane tab="Player Stats" key="2">
+                              <div className="team-player-tab__container bordered">
+                                   <TeamPlayerStatTab/>
+                              </div>
                          </TabPane>
-                         <TabPane tab="History" key="3">
+                         <TabPane tab="Advance Stats" key="3">
+                              <div className="team-player-tab__container bordered">
+                                   <TeamAdvanceStatTab/>
+                              </div>
                          </TabPane>
-                         <TabPane tab="Hall of Fame" key="4">
+                         <TabPane tab="History" key="4">
+                              <div className="team-player-tab__container">
+                                   <HistoryTab teamDetails={teamDetails}/>
+                              </div>
+                         </TabPane>
+                         <TabPane tab="Hall of Fame" key="5">
+                              <HallOfFame teamDetails={teamDetails.TeamHof}/>
+                         </TabPane>
+                         <TabPane tab="Stats Glossary" key="6">
+                              <StatGlossary/>
                          </TabPane>
                     </Tabs>
                </div>
@@ -63,11 +75,10 @@ export default function TeamProfileBoard(){
                          justify-content: space-between;
                          font-size : 24px;
                          font-weight: 900;
-                         background-color: ${'#542583'};
                          color: #ffffff;
                          padding: 8px 16px;
                     }
-                    .banner__name{
+                    .banner__name{ 
                          font-size: 13px;
                          margin-left: 10px;
                     }
@@ -75,6 +86,9 @@ export default function TeamProfileBoard(){
                          font-size: 13px;
                          color: #ffffff;
                          margin-right: 10px;
+                    }
+                    .team-player-tab__container{
+                         margin: 16px;
                     }
                     @media (min-width: 768px) {
                          .banner__name, .banner__social-icon {

@@ -1,21 +1,11 @@
-import {useState, useEffect} from 'react';
-import nba from 'nba-api-client';
+import {useContext} from 'react';
 import { List, Avatar } from 'antd';
+import LeagueStandingsContext from '../../context/LeagueStandings';
 
 export default function ScheduleBoard(){
-     const [data, setData] = useState(null);
-
-     useEffect( ()=>{
-          const options = {
-               Season: '2019-20', 
-          }
-          nba.leagueStandings({...options}).then(function(data){
-               console.log(data.Standings[0]);
-               setData(Object.entries(data.Standings))
-           })
-     },[])
+     const leagueStandings = useContext(LeagueStandingsContext);
      
-     const teams = data ? data.map( team => {
+     const teams = leagueStandings ? leagueStandings.map( team => {
           const object = {
                id : team[1].TeamID,
                teamName : team[1].TeamName,
@@ -30,7 +20,7 @@ export default function ScheduleBoard(){
      }
      ) : null ;
      return(
-           data ? <List
+          leagueStandings ? <List
                itemLayout="horizontal"
                dataSource={teams}
                renderItem={ (team,index) => (
