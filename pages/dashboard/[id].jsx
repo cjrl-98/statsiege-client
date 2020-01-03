@@ -2,7 +2,7 @@ import {useContext} from 'react';
 import Head from 'next/head';
 import TeamLayout from '../../components/TeamLayout/TeamLayout';
 import {ThemeContext} from '../../context/ThemeContext';
-import Example from '../../components/Header/Example';
+import Header from '../../components/Header/Header';
 
 export default function Dashboard (){
   const theme = useContext(ThemeContext);
@@ -17,6 +17,7 @@ export default function Dashboard (){
           <meta name="theme-color" content={theme}/>
           <meta http-equiv="cache-control" content="cache"/>
       </Head>
+      <Header/>
       <TeamLayout/>
       <noscript>Your browser does not support JavaScript!</noscript>
       <style jsx global>{`

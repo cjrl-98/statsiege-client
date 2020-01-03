@@ -1,8 +1,8 @@
-import Burger from '../Burger/Burger';
+import Header from '../Header/Header';
 export default function AllDecadeLanding(){
      return(
           <>
-               <Burger/>
+               <Header/>
                <article className="all-decade__landing">
                     <div className="landing__intro-container">
                          <h1 className="landing__intro-title">NBA All-Decade 1st Team</h1>
@@ -19,6 +19,7 @@ export default function AllDecadeLanding(){
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    margin-top: 32px;
                }
                .landing__intro-container{
                     width: 80%;
@@ -57,6 +58,9 @@ export default function AllDecadeLanding(){
                     }
                }
                @media (min-width: 425px){
+                    .all-decade__landing{
+                         margin-top: 32px;
+                    }
                     .landing__intro-alert {
                          width: fit-content;
                     }

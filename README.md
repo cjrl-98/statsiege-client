@@ -5,7 +5,6 @@
 # Progress
 # December 23 2019
 ## Day 1 
-## https://simple-nba-stat-tracker.now.sh/dashboard/1610612749 - View the live version right now
 
      1) Ability to view a team's current stats as a group and its individual player
      2) Implemented Live Season Standings that also shows W/L & Current Streak

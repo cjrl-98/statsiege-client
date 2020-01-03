@@ -6,7 +6,7 @@ import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 
 const sidebar = {
-  open: (height = 300) => ({
+  open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
     transition: {
       type: "spring",
@@ -15,7 +15,7 @@ const sidebar = {
     }
   }),
   closed: {
-    clipPath: "circle(24px at 260px 40px)",
+    clipPath: "circle(25px at 260px 40px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -32,7 +32,7 @@ export default function Header () {
 
   return (
        <> 
-          <header className="burger-wrapper"> 
+          <div className="burger-wrapper"> 
                <motion.nav
                     initial={false}
                     animate={isOpen ? "open" : "closed"}
@@ -44,7 +44,7 @@ export default function Header () {
                     </motion.div>
                     <MenuToggle toggle={() => toggleOpen()} />
                </motion.nav>
-          </header>
+          </div>
           <BurgerStyle/>
     </>
   );

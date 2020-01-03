@@ -1,5 +1,4 @@
 export default function AllDecadeLayout({player}){
-     console.log(player)
      return(
           <>
                <article className="all-decade__text">
