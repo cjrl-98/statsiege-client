@@ -1,24 +1,25 @@
 import {useContext} from 'react';
 import Head from 'next/head';
-import TeamLayout from '../../components/TeamLayout/TeamLayout';
+import TeamProfileLayout from '../../components/TeamProfileLayout/TeamProfileLayout';
 import {ThemeContext} from '../../context/ThemeContext';
 import Header from '../../components/Header/Header';
 
 export default function Dashboard (){
-  const theme = useContext(ThemeContext);
+  const [theme, TeamName] = useContext(ThemeContext);
   return(
     <div>
-      <Head>
-          <title>Statsiege - Basketball Stats</title>
+       <Head>
+          <title>Statsiege - {TeamName}</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta name="robots" content="index, follow"/>
-          <meta charset="utf-8"/>
-          <meta name="description" content="NBA Statistics and Team Profile for Teams"/>
+          <meta charSet="utf-8"/>
+          <meta name="description" content={`NBA Team Statistics for ${TeamName}`}/>
           <meta name="theme-color" content={theme}/>
-          <meta http-equiv="cache-control" content="cache"/>
+          <meta httpEquiv="cache-control" content="cache"/>
+          <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet"></link>
       </Head>
       <Header/>
-      <TeamLayout/>
+      <TeamProfileLayout/>
       <noscript>Your browser does not support JavaScript!</noscript>
       <style jsx global>{`
         .main-color{

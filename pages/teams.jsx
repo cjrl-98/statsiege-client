@@ -1,23 +1,23 @@
 import {useContext} from 'react';
 import Head from 'next/head';
-import AllDecadeLayout from '../components/AllDecadeLayout/AllDecadeLayout';
+import TeamsLayout from '../components/TeamsLayout/TeamsLayout';
 import {ThemeContext} from '../context/ThemeContext';
 
-export default function Decade (){
+export default function Teams (){
   const theme = useContext(ThemeContext);
   return(
     <div>
       <Head>
-          <title>Statsiege - All Decade Team</title>
+          <title>Statsiege - NBA Teams</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           <meta name="robots" content="index, follow"/>
           <meta charSet="utf-8"/>
-          <meta name="description" content="NBA All Decade Team"/>
+          <meta name="description" content="NBA Teams"/>
           <meta name="theme-color" content={theme}/>
           <meta httpEquiv="cache-control" content="cache"/>
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet"></link>
       </Head>
-      <AllDecadeLayout/>
+      <TeamsLayout/>
       <noscript>Your browser does not support JavaScript!</noscript>
       <style jsx global>{`
         html, body, div, span, applet, object, iframe,

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import TeamLayout from '../components/TeamLayout/TeamLayout';
 
 export default function index (){
   return(

@@ -12,7 +12,7 @@ export default function ProfileTab(props){
              );
           return (
                <Popover content={content} key={item.YEARAWARDED} trigger="click">
-                    <img style={{margin: "5px 4px", marginBottom: "5px", width: "11px"}} src="/nba-championship-trophy.jpg" alt="nba-championship-throphy"/>
+                    <img style={{margin: "5px 4px", marginBottom: "5px", width: "11px"}} src="https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fnba-championship-trophy.gif?alt=media&token=78684fcf-b721-4e8f-b029-930cb7f432a4" alt="nba-championship-throphy"/>
                </Popover>
           )          
      })

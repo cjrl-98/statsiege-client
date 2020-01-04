@@ -57,7 +57,7 @@ const decadeData = [
                allNba : ["5x", "2014, 2015, 2017, 2018, 2019"],
                scoring : ["2x", "2018, 2019"],
                championship : null,
-               color : ["#000000","#CE1141"]
+               color : ["#CE1141","#C4CED4"]
           },
           style : 'width:650px; height: 650px; margin-left: 13vw;',
           tabletStyle : 'width: 900px; height: 730px; margin-left: 23vw;',
@@ -78,7 +78,7 @@ const decadeData = [
                allNba : ["2x", "2016, 2017"],
                scoring : ["2x","2015, 2017"],
                championship : null,
-               color : ["#000000","#CE1141"]
+               color : ["#CE1141","#C4CED4"]
           },
           style : 'width: 550px; height: 850px; margin-left: 45vw;',
           tabletStyle : 'width: 650px; height: 950px; margin-left: 37vw;',

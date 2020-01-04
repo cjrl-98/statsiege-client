@@ -38,8 +38,22 @@
 
 # January 2 2019
 ## Day 2
+          Finished Functionalities
+               1) Header Component with an animated burger menu
+               2) 2010s ALL Decade 1st Team Page 
+                    * Uses a page by page scroll
+                    * Showcases the top 5 players of the decade
+                         * A short bio
+                         * Link to their individual wikipedias
+                         * their carreer stats and awards 
+               3) Launch server on Digital Ocean Droplet
 
-     Day Goals 
-          1) Going to start working on NBA All-Decade 1st Team Page
-          2) Finishing Burger Menu
-          3) Launch server on Digital Ocean Droplet
+# January 3 2019
+## Day 3
+          Finished Functionalities
+               1) Teams Landing Page
+                    * Filtered by conference and divisions.
+                    * Shows current season record
+                    * Links to individual team dashboards
+               2) Introduced Scheduled data cache on server
+               3) Fixed framer motion style bugs where server and client styles dont match

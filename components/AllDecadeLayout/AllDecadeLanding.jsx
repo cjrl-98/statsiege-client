@@ -44,6 +44,7 @@ export default function AllDecadeLanding(){
                     margin-top: 16px;
                     margin-left: auto;
                     background-color: #0246d8;
+                    text-align: center;
                }
                @media (min-width: 375px){
                     .landing__intro-title{

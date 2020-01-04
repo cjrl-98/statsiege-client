@@ -12,7 +12,6 @@ export default function BurgerStyle (){
                     bottom: 0;
                     width: 300px;
                     background: #000000;
-                    z-index: 9999;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -34,7 +33,6 @@ export default function BurgerStyle (){
                     height: 50px;
                     border-radius: 50%;
                     background: transparent;
-                    z-index: 9999;
                }
 
                .burger-wrapper ul {

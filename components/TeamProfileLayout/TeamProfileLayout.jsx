@@ -1,7 +1,7 @@
 import SeasonStandings from '../SeasonStandings/SeasonStandings';
 import TeamProfileBoard from '../TeamProfileBoard/TeamProfileBoard';
 
-export default function TeamLayout(){
+export default function TeamProfileLayout(){
      return(
           <>
           <section className="stats-section">

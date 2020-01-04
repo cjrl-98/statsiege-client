@@ -1,4 +1,3 @@
-import * as React from "react";
 import { motion } from "framer-motion";
 
 const Path = props => (
@@ -27,7 +26,7 @@ const burgerVariants = {
 }
 
 export const MenuToggle = ({ toggle }) => (
-  <button onClick={toggle}>
+  <button onClick={toggle} aria-label="burger-icon">
     <svg width="20" height="20" viewBox="0 0 23 23">
       <Path variants={burgerVariants.top}/>
       <Path d="M 2 9.423 L 20 9.423" variants={burgerVariants.middle} transition={{ duration: 0.1 }}/>

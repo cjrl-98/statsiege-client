@@ -30,34 +30,34 @@ const listVariants = {
 const menuItems = [
   {
     text : "Teams",
-    link : "",
+    link : "/teams",
     icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fteam.svg?alt=media&token=b8b811a0-8df1-4a75-aa71-19b69d0568d8"
   },
-  {
-    text : "Players",
-    link : "",
-    icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fplayer.svg?alt=media&token=e6899846-64d7-41c0-b3b8-169a1bed24e0"
-  },
+  // {
+  //   text : "Players",
+  //   link : "/players",
+  //   icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fplayer.svg?alt=media&token=e6899846-64d7-41c0-b3b8-169a1bed24e0"
+  // },
   {
     text : "2010s All Decade",
-    link : "http://localhost:3000/decade",
+    link : "/decade",
     icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fdecade.svg?alt=media&token=82fd3987-01b5-4365-863c-3778253e61dd"
   },
-  {
-    text : "Stats Glossary",
-    link : "",
-    icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fglossary.svg?alt=media&token=dd8ba16f-dfff-4718-a390-b3094e6502d7"
-  },
-  {
-    text : "About",
-    link : "",
-    icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Finfo.svg?alt=media&token=43a2b92b-1a55-4976-a636-798b24b108c2"
-  },
+  // {
+  //   text : "Stats Glossary",
+  //   link : "/glossary",
+  //   icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fglossary.svg?alt=media&token=dd8ba16f-dfff-4718-a390-b3094e6502d7"
+  // },
+  // {
+  //   text : "About",
+  //   link : "/about",
+  //   icon : "https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Finfo.svg?alt=media&token=43a2b92b-1a55-4976-a636-798b24b108c2"
+  // },
 
 ]
 const MenuItem = ({ item }) => {
   return (
-    <Link href="/decade">
+    <Link href={item.link}>
       <a>
         <motion.li
               variants={listVariants}
