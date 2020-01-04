@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function AllDecadeLayout({player}){
      return(
           <>
@@ -11,9 +13,11 @@ export default function AllDecadeLayout({player}){
                     </div>
                          <p className="all-decade__bio">{player.bio}</p>
                     <div className="all-decade__btn-container">
-                         <a href={player.teamLink} target="_blank" rel="noopener noreferrer">
-                              <button className="all-decade__btn all-decade__btn--view">View Team</button>
-                         </a>
+                         <Link href={"/dashboard/[id]"} as={`/dashboard/${player.teamLink}`}>
+                              <a>
+                                   <button className="all-decade__btn all-decade__btn--view">View Team</button>
+                              </a>
+                         </Link>
                          <a href={player.wikipedia} target="_blank" rel="noopener noreferrer">
                               <button className="all-decade__btn all-decade__btn--read-more">Read More</button>
                          </a>

@@ -11,8 +11,6 @@ export default function PlayerHustleTab(props){
      useEffect( ()=>{
           getPlayerShootingDefense(props.teamId, setPlayerShootingDefense, perMode, season );
      },[props.teamId]);  
-
-     console.log(playerShootingDefense);
      
      const playerShootingDefenseList = playerShootingDefense ? playerShootingDefense.map( player => {
           player.playerProfile = <PlayerAvatar TeamId={props.TeamId} PLAYER_ID={player.PLAYER_ID} PLAYER_NAME={player.PLAYER_NAME}/>

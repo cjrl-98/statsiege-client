@@ -18,13 +18,13 @@ export default function TeamsLayout(){
      const northwest = getDivision("Northwest");
      const southwest = getDivision("Southwest");
 
-
      return(
           <>
                <Header/>
                <main className="team-main">
                     <section className="team__container">
-                         <div className="team__conference--bordered">
+                         <h1 className="teams-main_title">NBA TEAMS</h1>
+                         <div className="team__conference--wrapper">
                               <h2 className="team__conference-title">Western Conference</h2>
                               <article className="team__conference">
                                    <TeamsList teams={pacific} division="Pacific"/>
@@ -32,7 +32,7 @@ export default function TeamsLayout(){
                                    <TeamsList teams={southwest} division="Southwest"/>
                               </article>
                          </div>
-                         <div className="team__conference--bordered">
+                         <div className="team__conference--wrapper">
                               <h2 className="team__conference-title">Eastern Conference</h2>
                               <article className="team__conference">
                                    <TeamsList teams={atlantic} division="Atlantic"/>
@@ -52,14 +52,21 @@ export default function TeamsLayout(){
                     }
                     .team__container{
                          max-width: 1920px;
-                         padding:0 16px;
                          margin-top: 24px;
-                    }
-                    .team__conference--bordered{
                          border: 2px solid #323232;
-                         border-radius: 25px;
-                         padding: 24px;
-                         margin: 24px 0;
+                         border-radius: 30px;
+                    }
+                    .teams-main_title{
+                         font-size: 44px;
+                         font-weight: 900;
+                         border-radius: 23px 23px 0 0;
+                         padding: 25px;
+                         background-color: #000000;
+                         color: #FFFFFF;
+                         margin-bottom: 24px;
+                    }
+                    .team__conference--wrapper{
+                         padding: 16px 16px 16px 16px;
                     }
                     .team__conference-title{
                          font-size: 24px;
@@ -68,15 +75,25 @@ export default function TeamsLayout(){
                     .team__conference{
                          display: flex;
                          flex-direction: column;
-                         margin-bottom: 24px;
                     }
                     @media (min-width: 768px){
-                         .team__container{
-                              padding:0 24px;
-                         }
                          .team__conference{
                               flex-direction: row;
                               flex-wrap: wrap;
+                              width: 650px;
+                         }
+                         .team__conference--wrapper{
+                              padding: 24px 24px 0 24px;
+                         }
+                    }
+                    @media (min-width: 1024px){
+                         .team__conference{
+                              flex-direction: row;
+                              flex-wrap: wrap;
+                              width: 980px;
+                         }
+                         .team__conference--wrapper{
+                              padding: 24px;
                          }
                     }
                `}</style>

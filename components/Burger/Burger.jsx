@@ -21,8 +21,8 @@ export default function Header () {
       }
     }),
     closed: {
-      clipPath: "circle(25px at 260px 40px)",
-      WebkitClipPath: "circle(25px at 260px 40px)",
+      clipPath: "circle(20px at 260px 35px)",
+      WebkitClipPath: "circle(20px at 260px 35px)",
       transition: {
         delay: 0.5,
         type: "spring",

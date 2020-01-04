@@ -55,5 +55,6 @@
                     * Filtered by conference and divisions.
                     * Shows current season record
                     * Links to individual team dashboards
-               2) Introduced Scheduled data cache on server
+               2) Introduced Scheduled data cache on server 
                3) Fixed framer motion style bugs where server and client styles dont match
+               4) Deployed server at a Digital Ocean Droplet with PM2 and NGINX

@@ -27,7 +27,7 @@ export default function BurgerStyle (){
                     -ms-user-select: none;
                     cursor: pointer;
                     position: absolute;
-                    top: 18px;
+                    top: 14px;
                     right: 15px;
                     width: 50px;
                     height: 50px;

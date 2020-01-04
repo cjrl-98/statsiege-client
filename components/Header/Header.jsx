@@ -1,6 +1,6 @@
+import { BackTop } from 'antd';
 import Link from 'next/link';
 import Burger from "../Burger/Burger";
-import { BackTop } from 'antd';
 
 export default function Header () {
      return(
@@ -11,19 +11,19 @@ export default function Header () {
                          <h1 className="header__logo-name">Statsiege</h1>
                     </div>
                     <nav className="header__nav">
-                         <Link><a className="header__nav-links" href="/teams">Teams</a></Link>
-                         <Link><a className="header__nav-links" href="/players">Players</a></Link>
-                         <Link><a className="header__nav-links" href="/decade">All-Decade</a></Link>
+                         <Link href="/teams"><a className="header__nav-links">Teams</a></Link>
+                         {/* <Link><a className="header__nav-links" href="/players">Players</a></Link> */}
+                         <Link href="/decade"><a className="header__nav-links">All-Decade</a></Link>
                     </nav>
                     <Burger/>
+                    <BackTop>
+                         <img alt="page up icon" src="https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fpage-up-icon.svg?alt=media&token=ad4c1e77-814c-40c1-994d-ee81735afe56"/>
+                    </BackTop>
                </header>
-               <BackTop>
-                    <img alt="page up icon" src="https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fpage-up-icon.svg?alt=media&token=ad4c1e77-814c-40c1-994d-ee81735afe56"/>
-               </BackTop>
           <style jsx>{`
                .header{
                     width: 100%;
-                    height: 80px;
+                    height: 70px;
                     background-color: #0246d8;
                     color: #FFFFFF;
                     z-index: 100;

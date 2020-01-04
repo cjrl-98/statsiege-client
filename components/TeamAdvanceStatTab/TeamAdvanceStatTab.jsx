@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
+import { Tabs } from 'antd';
 import { useRouter } from 'next/router';
 import {getPlayerHustleStats} from '../../modules/getStats';
-import { Tabs } from 'antd';
 import PlayerHustleTab from './PlayerHustleTab';
 import PlayerClutchTab from './PlayerClutchTab';
 import PlayerShootingDefenseStat from './PlayerShootingDefenseStat'

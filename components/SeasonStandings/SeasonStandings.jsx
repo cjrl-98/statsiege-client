@@ -1,7 +1,7 @@
 import {useContext} from 'react';
+import { List, Avatar, Spin } from 'antd';
 import Link from 'next/link'
 import {LeagueStandingsContext} from '../../context/LeagueStandings';
-import { List, Avatar, Spin } from 'antd';
 
 export default function SeasonStandings(){
      const leagueStandings = useContext(LeagueStandingsContext);
@@ -17,7 +17,7 @@ export default function SeasonStandings(){
                          <List.Item>
                          <p style={{margin: ' 0 8px auto 8px', fontSize:'20px'}}>{index + 1}</p>
                          <List.Item.Meta
-                              avatar={<Avatar src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${team.TeamID}.svg`} />}
+                              avatar={<Avatar alt={`${team.TeamName} icon`} src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${team.TeamID}.svg`} />}
                               title={<Link href={`/dashboard/${team.TeamID}`} prefetch={false}><a>{team.TeamName}</a></Link>}
                               description={`Wins : ${team.WINS} | Losses: ${team.LOSSES} | Current Streak : ${team.CurrentStreak}`}
                          />
@@ -35,13 +35,9 @@ export default function SeasonStandings(){
                          margin: 0;
                     }
                     .season-standings__table{
-                         height:800px;
+                         min-width: 380px;
+                         height: 785px;
                          overflow: auto;
-                    }
-                    @media (min-width: 768px) {
-                         .season-standings__table{
-                              height:800px;
-                         }
                     }
                `}
                </style>

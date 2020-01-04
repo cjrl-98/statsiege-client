@@ -1,7 +1,6 @@
 import { Card } from 'antd';
 
 export default function HallOfFame(props){
-     console.log(props.teamDetails);
      const hofList = props.teamDetails ? 
           Object.values(props.teamDetails).map ( player => {
                return (

@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext} from 'react';
+import { Tabs, Avatar,Icon, Spin } from 'antd';
 import { useRouter } from 'next/router';
 import {LeagueStandingsContext} from '../../context/LeagueStandings.js';
-import { Tabs, Avatar,Icon, Spin } from 'antd';
 import ProfileTab from './ProfileTab';
 import TeamPlayerStatTab from '../TeamPlayerStatTab/TeamPlayerStatTab';
 import HallOfFame from './HallOfFame'
@@ -33,13 +33,13 @@ export default function TeamProfileBoard(){
                <div>
                     <div className="profile__team-banner main-color">
                          <div>
-                              <Avatar size="large" src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${team.TeamID}.svg`} />
+                              <Avatar size="large" alt={`${team.TeamName} icon`} src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${team.TeamID}.svg`} />
                               <span className="banner__name">{`${team.TeamCity} ${team.TeamName}`}</span>
                          </div>
                               <div>
-                                   <a href={teamDetails.TeamSocialSites[0].WEBSITE_LINK} className="banner__social-icon"><Icon type="instagram"/></a>
-                                   <a href={teamDetails.TeamSocialSites[1].WEBSITE_LINK} className="banner__social-icon"><Icon type="twitter"/></a>
-                                   <a href={teamDetails.TeamSocialSites[2].WEBSITE_LINK} className="banner__social-icon"><Icon className="banner__icon" type="facebook"/></a>
+                                   <a href={teamDetails.TeamSocialSites[0].WEBSITE_LINK} className="banner__social-icon" target="_blank" rel="noopener noreferrer"><Icon type="instagram"/></a>
+                                   <a href={teamDetails.TeamSocialSites[1].WEBSITE_LINK} className="banner__social-icon" target="_blank" rel="noopener noreferrer"><Icon type="twitter"/></a>
+                                   <a href={teamDetails.TeamSocialSites[2].WEBSITE_LINK} className="banner__social-icon" target="_blank" rel="noopener noreferrer"><Icon className="banner__icon" type="facebook"/></a>
                               </div>
                     </div>
                     <Tabs defaultActiveKey="1" size={"small"}>
