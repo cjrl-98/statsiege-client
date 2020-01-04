@@ -4,7 +4,7 @@ const season = '2019-20';
 
 export const getPlayerClutchStats = (pointDif, clutchTime, perMode, id, setStateCallback) => {
      setStateCallback(null);
-     axios.get(`http://167.99.158.68/statsiege/teamPlayerClutch`, {
+     axios.get(`https://strawberrystack.me/statsiege/teamPlayerClutch`, {
           params: {
                season: season,
                id: id,
@@ -20,7 +20,7 @@ export const getPlayerClutchStats = (pointDif, clutchTime, perMode, id, setState
 }
 
 export const getLeagueStandings = (setStateCallback) => {
-     axios.get(`http://167.99.158.68/statsiege/leagueStandings`, {
+     axios.get(`https://strawberrystack.me/statsiege/leagueStandings`, {
           params: {
                season: season,
           }
@@ -32,7 +32,7 @@ export const getLeagueStandings = (setStateCallback) => {
 }
 
 export const getPlayerHustleStats = (id, setStateCallback) => {
-     axios.get('http://167.99.158.68/statsiege/teamHustleStats', {
+     axios.get('https://strawberrystack.me/statsiege/teamHustleStats', {
           params: {
                id: id,
                season: season,
@@ -45,7 +45,7 @@ export const getPlayerHustleStats = (id, setStateCallback) => {
 }
 
 export const getPlayerGeneralStats = (id, setStateCallback) => {
-     axios.get('http://167.99.158.68/statsiege/teamPlayerGeneralStats', {
+     axios.get('https://strawberrystack.me/statsiege/teamPlayerGeneralStats', {
           params: {
                id: id,
                season: season,
@@ -59,8 +59,8 @@ export const getPlayerGeneralStats = (id, setStateCallback) => {
 
 export const getTeamDetails = (id, setStateCallback1, setStateCallback2 ) => {
      axios.all([
-          axios.get(`http://167.99.158.68/statsiege/teamDetails?id=${id}`), 
-          axios.get(`http://167.99.158.68/statsiege/teamGeneralStats?id=${id}&season=2019-20`)
+          axios.get(`https://strawberrystack.me/statsiege/teamDetails?id=${id}`), 
+          axios.get(`https://strawberrystack.me/statsiege/teamGeneralStats?id=${id}&season=2019-20`)
      ])
      .then(axios.spread(function (teamDetails, teamGeneralStats) {
           setStateCallback1(teamDetails.data);
@@ -68,7 +68,7 @@ export const getTeamDetails = (id, setStateCallback1, setStateCallback2 ) => {
      }));
 }
 export const getPlayerShootingDefense = (id, setStateCallback, perMode, seasonParams) => {
-     axios.get('http://167.99.158.68/statsiege/teamPlayerShootingDefense', {
+     axios.get('https://strawberrystack.me/statsiege/teamPlayerShootingDefense', {
           params: {
                id: id,
                season: seasonParams ? seasonParams : season,
