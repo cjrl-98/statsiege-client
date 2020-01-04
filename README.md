@@ -2,6 +2,7 @@
      A quick simple project to do during the holidays 
      The application allows users to track their favourite team throughout the season
 
+     Checkout the site at https://statsiege.live/
 # Progress
 # December 23 2019
 ## Day 1 
