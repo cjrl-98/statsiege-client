@@ -1,7 +1,7 @@
 import {useContext} from 'react';
 import { Spin, Tabs } from 'antd';
-import {LeagueStandingsContext} from '../../context/LeagueStandings';
 import ConferenceTabs from './ConferenceTabs';
+import {LeagueStandingsContext} from '../../context/LeagueStandings';
 const { TabPane } = Tabs;
 
 export default function SeasonStandings(){

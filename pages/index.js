@@ -18,7 +18,6 @@ export default function Dashboard (){
           <meta httpEquiv="cache-control" content="cache"/>
           <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet"></link>
       </Head>
-      <Header/>
       <TeamsLayout/>
       <noscript>Your browser does not support JavaScript!</noscript>
       <style jsx global>{`

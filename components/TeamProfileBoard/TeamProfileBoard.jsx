@@ -1,14 +1,14 @@
 import {useState, useEffect, useContext} from 'react';
-import { Tabs, Avatar,Icon, Spin } from 'antd';
+import { Avatar, Icon, Spin, Tabs } from 'antd';
 import { useRouter } from 'next/router';
-import {LeagueStandingsContext} from '../../context/LeagueStandings.js';
-import ProfileTab from './ProfileTab';
-import TeamPlayerStatTab from '../TeamPlayerStatTab/TeamPlayerStatTab';
+import {getTeamDetails} from '../../modules/getStats';
 import HallOfFame from './HallOfFame'
 import HistoryTab from './HistoryTab';
-import TeamAdvanceStatTab from '../TeamAdvanceStatTab/TeamAdvanceStatTab';
+import {LeagueStandingsContext} from '../../context/LeagueStandings.js';
+import ProfileTab from './ProfileTab';
 import StatGlossary from '../StatGlossary/StatGlossary';
-import {getTeamDetails} from '../../modules/getStats';
+import TeamPlayerStatTab from '../TeamPlayerStatTab/TeamPlayerStatTab';
+import TeamAdvanceStatTab from '../TeamAdvanceStatTab/TeamAdvanceStatTab';
 const { TabPane } = Tabs;
 
 export default function TeamProfileBoard(){

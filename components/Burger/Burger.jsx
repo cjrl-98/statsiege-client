@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import {Modal} from "antd";
-import BurgerStyle from "./BurgerStyle";
-import { useDimensions } from "./use-dimensions";
 import { motion, useCycle } from "framer-motion";
+import BurgerStyle from "./BurgerStyle";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
 import StatsGlossary from "../StatGlossary/StatGlossary";
+import { useDimensions } from "./use-dimensions";
 
 export default function Header () {
   const [isGlossary, toggleGlossary] = useCycle(false, true);

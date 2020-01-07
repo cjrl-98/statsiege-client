@@ -45,7 +45,7 @@ const MenuItem = ({ item, isOpen }) => {
         </motion.li>
       </a>
     </Link> :
-    <motion.li onClick={ () => isOpen ? null : item.callback } variants={listVariants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>      
+    <motion.li onClick={ () => isOpen ? item.callback() : null } variants={listVariants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>      
       <img className="icon-placeholder" alt={`${item.text} icon`} src={item.icon}/>
       <p className="text-placeholder">{item.text}</p>
     </motion.li>

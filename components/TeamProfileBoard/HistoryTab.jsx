@@ -1,4 +1,4 @@
-import { Descriptions, Popover, Tag, Icon, Card } from 'antd';
+import { Card, Descriptions, Icon, Popover, Tag } from 'antd';
 
 export default function HistoryTab(props){
      const {TeamHistory, TeamAwardsChampionships,TeamAwardsConf,TeamAwardsDiv,TeamRetired} = props.teamDetails;

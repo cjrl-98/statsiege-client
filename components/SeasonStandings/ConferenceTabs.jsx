@@ -1,4 +1,4 @@
-import { List, Avatar } from 'antd';
+import { Avatar, List } from 'antd';
 import Link from 'next/link'
 
 export default function ConferenceTabs(props){

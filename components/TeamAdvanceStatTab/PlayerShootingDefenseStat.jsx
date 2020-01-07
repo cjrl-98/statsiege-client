@@ -5,11 +5,9 @@ import PlayerAvatar from '../PlayerAvatarName/PlayerAvatar';
 
 export default function PlayerHustleTab(props){
      const [playerShootingDefense, setPlayerShootingDefense] = useState(null);
-     const [perMode, setPerMode] = useState('PerGame');
-     const [season, setSeason] = useState(null);
 
      useEffect( ()=>{
-          getPlayerShootingDefense(props.teamId, setPlayerShootingDefense, perMode, season );
+          getPlayerShootingDefense(props.teamId, setPlayerShootingDefense, 'PerGame' );
      },[props.teamId]);  
      
      const playerShootingDefenseList = playerShootingDefense ? playerShootingDefense.map( player => {

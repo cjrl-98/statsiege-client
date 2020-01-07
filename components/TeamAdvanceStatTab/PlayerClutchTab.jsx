@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import { Select, Button, Dropdown, Icon, Tag } from 'antd';
+import { Button, Dropdown, Icon, Select, Tag } from 'antd';
 import { getPlayerClutchStats } from '../../modules/getStats';
 import PlayerStatTable from '../PlayerStatTable/PlayerStatTable';
 

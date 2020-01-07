@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import {Card} from 'antd';
-import moment from 'moment';
 import axios from 'axios';
+import moment from 'moment';
 
 export default function(){
      const [schedule, setSchedule] = useState(null);

@@ -2,8 +2,8 @@ import {useEffect, useState} from 'react';
 import { Tabs } from 'antd';
 import { useRouter } from 'next/router';
 import {getPlayerHustleStats} from '../../modules/getStats';
-import PlayerHustleTab from './PlayerHustleTab';
 import PlayerClutchTab from './PlayerClutchTab';
+import PlayerHustleTab from './PlayerHustleTab';
 import PlayerShootingDefenseStat from './PlayerShootingDefenseStat'
 
 const { TabPane } = Tabs;

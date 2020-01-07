@@ -1,4 +1,4 @@
-import { List, Avatar, Icon, Skeleton } from 'antd';
+import { Avatar, Icon, List, Skeleton } from 'antd';
 import Link from 'next/link';
 
 export default function TeamsList({teams, division}){
