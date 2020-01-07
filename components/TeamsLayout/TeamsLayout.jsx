@@ -1,8 +1,9 @@
 import {useContext} from 'react';
 import {LeagueStandingsContext} from '../../context/LeagueStandings';
 import Header from '../Header/Header';
+import LiveGames from '../LiveGames/LiveGames';
 import TeamsList from './TeamsList';
-
+import Footer from "../Footer/Footer";
 export default function TeamsLayout(){
      const leagueStandings = useContext(LeagueStandingsContext);
 
@@ -22,6 +23,9 @@ export default function TeamsLayout(){
           <>
                <Header/>
                <main className="team-main">
+                    <div style={{width: "100%"}}>
+                         <LiveGames/>
+                    </div>
                     <section className="team__container">
                          <h1 className="teams-main_title">NBA TEAMS</h1>
                          <div className="team__conference--wrapper">
@@ -42,24 +46,21 @@ export default function TeamsLayout(){
                          </div>
                     </section>
                </main>
-
+               <Footer/>
                <style jsx>{`
                     .team-main{
                          display: flex;
                          flex-direction: column;
                          align-items: center;
-                         margin-top: 80px;
+                         margin-top: 70px;
                     }
                     .team__container{
                          max-width: 1920px;
-                         margin-top: 24px;
                          border: 2px solid #323232;
-                         border-radius: 30px;
                     }
                     .teams-main_title{
                          font-size: 44px;
                          font-weight: 900;
-                         border-radius: 23px 23px 0 0;
                          padding: 25px;
                          background-color: #000000;
                          color: #FFFFFF;
@@ -77,6 +78,11 @@ export default function TeamsLayout(){
                          flex-direction: column;
                     }
                     @media (min-width: 768px){
+                         .team__container{
+                              margin-top: 24px;
+                              margin-bottom: 70px;
+
+                         }
                          .team__conference{
                               flex-direction: row;
                               flex-wrap: wrap;

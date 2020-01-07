@@ -13,7 +13,7 @@ export default function AllDecadeLayout({player}){
                     </div>
                          <p className="all-decade__bio">{player.bio}</p>
                     <div className="all-decade__btn-container">
-                         <Link href={"/dashboard/[id]"} as={`/dashboard/${player.teamLink}`}>
+                         <Link href={"/dashboard/[id]"} as={`/dashboard/${player.TeamID}`}>
                               <a>
                                    <button className="all-decade__btn all-decade__btn--view">View Team</button>
                               </a>
@@ -81,6 +81,9 @@ export default function AllDecadeLayout({player}){
                </article>
 
                <style jsx>{`
+                    .all-decade__text{
+                         color: #000000;
+                    }
                     .all-decade__title{
                          font-weight: 900;
                     }
@@ -117,6 +120,7 @@ export default function AllDecadeLayout({player}){
                          height: 20px;
                          clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
                          font-size: 6px;
+                         color: #FFFFFF;
                          font-weight: 900;
                          border: none;
                     }

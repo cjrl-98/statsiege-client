@@ -1,37 +1,37 @@
 import { useRef } from "react";
+import {Modal} from "antd";
 import BurgerStyle from "./BurgerStyle";
-import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
+import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
+import StatsGlossary from "../StatGlossary/StatGlossary";
 
 export default function Header () {
+  const [isGlossary, toggleGlossary] = useCycle(false, true);
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
   const sidebar = {
-    open: (height = 1000) => ({
-      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-      WebkitClipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    open: {
+      clipPath: `circle( 550px at 40px 40px)`,
       transition: {
         type: "spring",
-        stiffness: 20,
-        restDelta: 2
+        stiffness: 60,
       }
-    }),
+    },
     closed: {
       clipPath: "circle(20px at 260px 35px)",
-      WebkitClipPath: "circle(20px at 260px 35px)",
       transition: {
         delay: 0.5,
         type: "spring",
         stiffness: 400,
         damping: 40
-      }
+      },
     }
   };
-
+  
   return (
        <> 
           <div className="burger-wrapper"> 
@@ -42,12 +42,20 @@ export default function Header () {
                     ref={containerRef}
                >
                     <motion.div className="background" variants={sidebar}>
-                      <Navigation />
+                      <Navigation isOpen={isOpen} toggleGlossary={toggleGlossary} />
                     </motion.div>
-                    <MenuToggle toggle={() => toggleOpen()} />
+                    <MenuToggle toggle={ () => toggleOpen() } />
                </motion.nav>
           </div>
+          { isOpen ? 
+            <div style={{position: "fixed", backgroundColor: "transparent", width: "100vw", height: "100vh", zIndex: "-10"}} 
+                onClick={ ()=> toggleOpen() } 
+            /> : null 
+          }
           <BurgerStyle/>
+          <Modal title="Statistics Glossary" visible={isGlossary} onCancel={toggleGlossary} footer={false}>
+            <StatsGlossary/>
+          </Modal>
     </>
   );
 };

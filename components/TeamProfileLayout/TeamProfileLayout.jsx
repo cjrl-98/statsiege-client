@@ -1,18 +1,27 @@
 import SeasonStandings from '../SeasonStandings/SeasonStandings';
 import TeamProfileBoard from '../TeamProfileBoard/TeamProfileBoard';
-
+import Footer from '../Footer/Footer';
 export default function TeamProfileLayout(){
      return(
           <>
-          <section className="stats-section">
-               <article className="stats-section__team-profile">
-                    <TeamProfileBoard/>
-               </article>
-               <article className="stats-section__season-standings">
-                    <SeasonStandings/>
-               </article>
-          </section>
+          <div className="body__container">
+               <section className="stats-section">
+                    <article className="stats-section__team-profile">
+                         <TeamProfileBoard/>
+                    </article>
+                    <article className="stats-section__season-standings">
+                         <SeasonStandings/>
+                    </article>
+               </section>
+               <Footer/>
+          </div>
           <style jsx>{`
+               .body__container{
+                    display: flex;
+                    height: 100vh;
+                    flex-direction: column;
+                    justify-content: space-between;
+               }
                .stats-section {
                     display: flex;
                     justify-content: center;
@@ -26,6 +35,7 @@ export default function TeamProfileLayout(){
                     min-height: 350px;
                }
                .stats-section__season-standings{
+                    position: relative;
                     height:850px;
                }
                @media (min-width: 1024px){
@@ -34,7 +44,7 @@ export default function TeamProfileLayout(){
                          margin-top: 106px;
                     }
                     article {
-                         border: 2px solid #323232;
+                         border: 2px solid rgba(32, 32, 32, 0.1);
                     }
                     .stats-section__team-profile{
                          max-width: 650px;

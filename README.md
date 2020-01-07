@@ -1,5 +1,5 @@
 # Simple NBA Team Tracker
-     A quick simple project to do during the holidays 
+     A quick simple project to do after the holidays 
      The application allows users to track their favourite team throughout the season
 
      Checkout the site at https://statsiege.live/
@@ -42,7 +42,7 @@
           Finished Functionalities
                1) Header Component with an animated burger menu
                2) 2010s ALL Decade 1st Team Page 
-                    * Uses a page by page scroll
+                    * Uses a FullPage.js
                     * Showcases the top 5 players of the decade
                          * A short bio
                          * Link to their individual wikipedias
@@ -59,3 +59,14 @@
                2) Introduced Scheduled data cache on server 
                3) Fixed framer motion style bugs where server and client styles dont match
                4) Deployed server at a Digital Ocean Droplet with PM2 and NGINX
+
+# January 6 2019 
+## Day 4
+          Work in Progress 
+               1) Started working on schedule functionality
+                    * Be able to view daily games and live scores
+
+          Finished Functionalities 
+               1) Changed Season Standings into tabs split by Conference
+               2) Reworked Burger Navigation
+               3) Added Footer Section

@@ -1,29 +1,27 @@
 import {useContext} from 'react';
-import { List, Avatar, Spin } from 'antd';
-import Link from 'next/link'
+import { Spin, Tabs } from 'antd';
 import {LeagueStandingsContext} from '../../context/LeagueStandings';
+import ConferenceTabs from './ConferenceTabs';
+const { TabPane } = Tabs;
 
 export default function SeasonStandings(){
      const leagueStandings = useContext(LeagueStandingsContext);
+     const western = leagueStandings ? leagueStandings.filter( team => team.Conference === "West" ) : null;
+     const eastern = leagueStandings ? leagueStandings.filter( team => team.Conference === "East" ) : null;
+
      return(
           leagueStandings ? 
-          <article>
+          <article className="season__standings">
                <h1 className="season-standings__title main-color">2019-20 Season Standings</h1>
                <div className="season-standings__table">
-                    <List
-                         itemLayout="horizontal"
-                         dataSource={leagueStandings}
-                         renderItem={ (team,index) => (
-                         <List.Item>
-                         <p style={{margin: ' 0 8px auto 8px', fontSize:'20px'}}>{index + 1}</p>
-                         <List.Item.Meta
-                              avatar={<Avatar alt={`${team.TeamName} icon`} src={`https://cdn.nba.net/assets/logos/teams/secondary/web/${team.TeamID}.svg`} />}
-                              title={<Link href={`/dashboard/${team.TeamID}`} prefetch={false}><a>{team.TeamName}</a></Link>}
-                              description={`Wins : ${team.WINS} | Losses: ${team.LOSSES} | Current Streak : ${team.CurrentStreak}`}
-                         />
-                         </List.Item>
-                         )}
-                    /> 
+                    <Tabs defaultActiveKey="1">
+                         <TabPane tab="Western Conference" key="1">
+                              <ConferenceTabs data={western}/> 
+                         </TabPane>
+                         <TabPane tab="Eastern Conference" key="2">
+                              <ConferenceTabs data={eastern}/> 
+                         </TabPane>
+                    </Tabs>
                </div>
 
                <style jsx>{`
@@ -35,9 +33,13 @@ export default function SeasonStandings(){
                          margin: 0;
                     }
                     .season-standings__table{
-                         min-width: 380px;
                          height: 785px;
                          overflow: auto;
+                    }
+                    @media (min-width: 768px){
+                         .season-standings__table{
+                              width: 400px;
+                         }
                     }
                `}
                </style>

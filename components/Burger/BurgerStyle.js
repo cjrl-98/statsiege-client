@@ -2,9 +2,8 @@ export default function BurgerStyle (){
      return (
           <style jsx global>{`
                .burger-wrapper nav {
-                    width: 300px
+                    width: 3000px
                }
-
                .burger-wrapper .background {
                     position: fixed;
                     top: 0;
@@ -15,9 +14,7 @@ export default function BurgerStyle (){
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
                }
-
                .burger-wrapper button {
                     position: fixed;
                     outline: none;
@@ -34,14 +31,12 @@ export default function BurgerStyle (){
                     border-radius: 50%;
                     background: transparent;
                }
-
                .burger-wrapper ul {
                     padding: 25px;
                     position: absolute;
                     top: 100px;
                     width: 280px;
                }
-
                .burger-wrapper li {
                     list-style: none;
                     margin-bottom: 25px;
@@ -50,13 +45,11 @@ export default function BurgerStyle (){
                     cursor: pointer;
                     color: #FFFFFF;
                }
-
                .burger-wrapper .icon-placeholder {
-                    width: 40px;
-                    height: 40px;
+                    width: 36px;
+                    height: 36px;
                     margin-right: 20px;
                }
-
                .burger-wrapper .text-placeholder {
                     border-radius: 5px;
                     width: 200px;

@@ -66,7 +66,7 @@ export default function HistoryTab(props){
                          size="small" 
                          title={player.PLAYER} 
                          extra={<a href={`https://en.wikipedia.org/wiki/${player.PLAYER}`} target="_blank" rel="noopener noreferrer">More</a>} 
-                         style={{width: "200px", margin: "16px"}}
+                         style={{width: "180px", margin: "8px"}}
                          headStyle={{fontSize: "16px", fontWeight: 500}}
                     >
                          <p>{`Position : ${player.POSITION}`}</p>
@@ -97,7 +97,7 @@ export default function HistoryTab(props){
                          {divisionTitleList.length > 0 ? <Descriptions.Item label={`Division Titles ( ${divisionTitleList.length} )`}>{divisionTitleList}</Descriptions.Item> : null}
                     </Descriptions>
                     <h1 className="team-retired__title">Players Retired</h1>
-                    <div className="team-retired__container bordered">
+                    <div className="team-retired__container">
                          {retiredPlayerList}
                     </div>
                     <style jsx>{`
@@ -110,7 +110,6 @@ export default function HistoryTab(props){
                               width: 100%;
                               display: flex;
                               flex-wrap: wrap;
-                              justify-content: center;
                          }
                     `}</style>
                </> : null       

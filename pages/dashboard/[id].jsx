@@ -24,6 +24,7 @@ export default function Dashboard (){
       <style jsx global>{`
         .main-color{
           background-color: ${theme};
+          border: none;
           color: #FFFFFF;
         }
         .bordered{

@@ -9,7 +9,7 @@ export default function HallOfFame(props){
                          size="small" 
                          title={player.PLAYER} 
                          extra={<a href={`https://en.wikipedia.org/wiki/${player.PLAYER}`} target="_blank" rel="noopener noreferrer">More</a>} 
-                         style={{width: "250px", margin: "16px"}}
+                         style={{width: "190px", margin: "8px"}}
                          headStyle={{fontSize: "16px", fontWeight: 500}}
                     >
                          <p>{`Position : ${player.POSITION}`}</p>
@@ -30,7 +30,7 @@ export default function HallOfFame(props){
                               width: 100%;
                               display: flex;
                               flex-wrap: wrap;
-                              justify-content: center;
+                              margin: 8px 0;
                          }
                     `}</style>
                </> : null       

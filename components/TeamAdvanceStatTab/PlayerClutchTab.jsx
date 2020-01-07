@@ -53,12 +53,11 @@ export default function PlayerClutchTab(props){
                          <Button>Options <Icon type="down" /></Button>
                     </Dropdown>
                     <Button
-                         className="main-color"
+                         className="player-clutch__filter-submit main-color"
                          type="primary"
                          icon="filter"
                          loading={ clutchStatData? false : true }
                          onClick={ () => getPlayerClutchStats(pointDif, clutchTime, perMode, props.teamId, setClutchStatData) }
-                         style={{marginLeft: "8px"}}
                     >
                          Filter
                     </Button>
@@ -77,6 +76,10 @@ export default function PlayerClutchTab(props){
                          display: flex;
                          justify-content: flex-end;
                          padding: 10px 10px 5px 0px;
+                    }
+                    :global(.player-clutch__filter-submit){
+                         margin-left: 8px;
+                         border: none;
                     }
                     .player-clutch__filter-tags{
                          width: fit-content;
