@@ -5,7 +5,6 @@ import moment from 'moment';
 
 export default function(){
      const [schedule, setSchedule] = useState(null);
-
      useEffect(()=>{
           axios.get(`https://www.balldontlie.io/api/v1/games`, {
                params: {
@@ -24,9 +23,10 @@ export default function(){
           })
           .catch(error => console.error(error));
      },[]);
-
+     console.log(schedule)
      const test = game => {
-          const date = moment(game.date).format('MMM D');
+          const date = moment(game.date).add(1,'day').format('MMM DD')
+          console.log(date)
           return (
                <Card style={{ minWidth: 170, marginRight: "16px"}} bodyStyle={{padding: "8px 14px"}} key={game.id}> 
                     <p className="game__card--status">
