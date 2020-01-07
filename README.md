@@ -1,6 +1,6 @@
 # Simple NBA Team Tracker
      A quick simple project to do after the holidays 
-     The application allows users to track their favourite team throughout the season
+     The application allows users to track their favourite NBA team throughout the season
 
      Checkout the site at https://statsiege.live/
 # Progress
