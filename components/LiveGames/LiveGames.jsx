@@ -28,7 +28,7 @@ export default function(){
           const date = moment(game.date).add(1,'day').format('MMM DD')
           console.log(date)
           return (
-               <Card style={{ minWidth: 170, marginRight: "16px"}} bodyStyle={{padding: "8px 14px"}} key={game.id}> 
+               <Card style={{ minWidth: 190, marginRight: "16px"}} bodyStyle={{padding: "8px 14px"}} key={game.id}> 
                     <p className="game__card--status">
                          <span className="game__card--time">{game.time === "     " ? date : game.time}</span>
                          <span className="game__card--status">{game.status}</span>
@@ -67,8 +67,7 @@ export default function(){
                <style jsx>{`
                     .games__container{
                          width: 100%;
-                         height: 130px;
-                         padding: 14px;
+                         padding: 18px;
                          max-width: 1440px;
                          overflow-x: auto;
                          margin: 0 auto;
