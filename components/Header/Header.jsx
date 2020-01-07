@@ -54,6 +54,7 @@ export default function Header () {
                }
                @media (min-width: 1024px){
                     .header__nav{
+                         width: 100%;
                          display: flex;
                          align-items: center;
                          border-left: 3px solid #FFFFFF;
@@ -61,9 +62,11 @@ export default function Header () {
                          height: 32px;
                     }
                     .header__nav-links{
+                         width: fit-content;
                          margin-left: 16px;
                          font-weight: 700;
                          color: #FFFFFF;
+                         white-space: nowrap;
                     }
                }    
           `}</style>
