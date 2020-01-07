@@ -28,7 +28,7 @@ export default function(){
      const test = game => {
           const date = moment(game.date).format('MMM D');
           return (
-               <Card style={{ minWidth: 160, marginRight: "16px"}} bodyStyle={{padding: "8px 14px"}} key={game.id}> 
+               <Card style={{ minWidth: 170, marginRight: "16px"}} bodyStyle={{padding: "8px 14px"}} key={game.id}> 
                     <p className="game__card--status">
                          <span className="game__card--time">{game.time === "     " ? date : game.time}</span>
                          <span className="game__card--status">{game.status}</span>
