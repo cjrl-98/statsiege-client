@@ -1,4 +1,3 @@
-import { BackTop } from 'antd';
 import Link from 'next/link';
 import Burger from "../Burger/Burger";
 
@@ -18,9 +17,6 @@ export default function Header () {
                          <Link href="/decade"><a className="header__nav-links">All-Decade</a></Link>
                     </nav>
                     <Burger/>
-                    <BackTop>
-                         <img style={{backgroundColor: "#FFFFFF", borderRadius: "50%", border: "none"}} alt="page up icon" src="https://firebasestorage.googleapis.com/v0/b/statsiege.appspot.com/o/icon%2Fpage-up-icon.svg?alt=media&token=ad4c1e77-814c-40c1-994d-ee81735afe56"/>
-                    </BackTop>
                </header>
           <style jsx>{`
                .header{

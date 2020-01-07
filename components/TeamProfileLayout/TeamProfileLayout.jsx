@@ -1,5 +1,5 @@
 import SeasonStandings from '../SeasonStandings/SeasonStandings';
-// import TeamProfileBoard from '../TeamProfileBoard/TeamProfileBoard';
+import TeamProfileBoard from '../TeamProfileBoard/TeamProfileBoard';
 import Footer from '../Footer/Footer';
 export default function TeamProfileLayout(){
      return(
@@ -7,7 +7,7 @@ export default function TeamProfileLayout(){
           <div className="body__container">
                <section className="stats-section">
                     <article className="stats-section__team-profile">
-                         {/* <TeamProfileBoard/> */}
+                         <TeamProfileBoard/>
                     </article>
                     <article className="stats-section__season-standings">
                          <SeasonStandings/>
@@ -29,7 +29,7 @@ export default function TeamProfileLayout(){
                     margin-bottom: 48px;
                     margin-top: 70px;
                }
-               article {
+               .body__container article {
                     position: relative;
                     min-width: 350px;
                     min-height: 350px;
