@@ -1,6 +1,7 @@
 /* eslint-disable */
 const withLess = require('@zeit/next-less')
 const lessToJS = require('less-vars-to-js')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs')
 const path = require('path')
 

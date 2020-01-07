@@ -1,4 +1,4 @@
-import { Popover, Card, Statistic, Row, Col, Descriptions, Alert, Icon  } from 'antd';
+import { Alert, Card, Col, Descriptions, Icon,  Popover,  Row, Statistic } from 'antd';
 
 export default function ProfileTab(props){
      const { team, teamDetails,teamStats} = props;
