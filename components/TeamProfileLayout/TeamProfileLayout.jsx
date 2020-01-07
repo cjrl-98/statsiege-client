@@ -6,10 +6,10 @@ export default function TeamProfileLayout(){
           <>
           <div className="body__container">
                <section className="stats-section">
-                    <article className="stats-section__team-profile">
+                    <article className="stats-section__article stats-section__team-profile">
                          <TeamProfileBoard/>
                     </article>
-                    <article className="stats-section__season-standings">
+                    <article className="stats-section__article stats-section__season-standings">
                          <SeasonStandings/>
                     </article>
                </section>
@@ -23,16 +23,16 @@ export default function TeamProfileLayout(){
                     justify-content: space-between;
                }
                .stats-section {
+                    min-height: fit-content;
                     display: flex;
                     justify-content: center;
                     flex-direction: column;
                     margin-bottom: 48px;
                     margin-top: 70px;
                }
-               .body__container article {
+               .stats-section__article {
                     position: relative;
                     min-width: 350px;
-                    min-height: 350px;
                }
                .stats-section__season-standings{
                     position: relative;
@@ -43,7 +43,7 @@ export default function TeamProfileLayout(){
                          flex-direction: row;
                          margin-top: 106px;
                     }
-                    article {
+                    .stats-section__article {
                          border: 2px solid rgba(32, 32, 32, 0.1);
                     }
                     .stats-section__team-profile{
