@@ -1,6 +1,8 @@
 # Simple NBA Team Tracker
      A quick simple project to do after the holidays 
      The application allows users to track their favourite NBA team throughout the season
+      
+     The server & it's repository is currently private and only accessible by statsiege.live    
 
      Checkout the site at https://statsiege.live/
 # Progress
